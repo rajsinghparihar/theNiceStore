@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block body %}
+<style>
+  body {
+    background: black;
+    height: 100%;
+  }
+</style>
+
+<span style="display: inline">
+  {% if flag == 'nofilter' %}
+  <img src="{{img_tag}}" style="height: 90vh" />
+  {% else %}
+  <img src="{{img_tag_blurred}}" style="height: 90vh" />
+  {% endif %}
+  <button
+    type="submit"
+    class="btn btn-primary"
+    onclick="window.location='/nofilter';"
+  >
+    No Filter
+  </button>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    onclick="window.location='/blurring';"
+  >
+    Blur
+  </button>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    onclick="window.location='/hsv';"
+  >
+    HSV
+  </button>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    onclick="window.location='/gray';"
+  >
+    Gray
+  </button>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    onclick="window.location='/matrix';"
+  >
+    Matrix Effect
+  </button>
+</span>
+{% endblock body %}
